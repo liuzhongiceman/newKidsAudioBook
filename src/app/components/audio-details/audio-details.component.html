@@ -1,0 +1,70 @@
+<div *ngIf="currentAudioBook" class="edit-form">
+  <h4>Audio Book</h4>
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="currentAudioBook.title"
+        name="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        [(ngModel)]="currentAudioBook.description"
+        name="description"
+      />
+    </div>
+    <div class="form-group">
+      <label for="imagePath">ImagePath</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imagePath"
+        [(ngModel)]="currentAudioBook.imagePath"
+        name="imagePath"
+      />
+    </div>
+    <div class="form-group">
+      <label for="audioPath">AudioPath</label>
+      <input
+        type="text"
+        class="form-control"
+        id="audioPath"
+        [(ngModel)]="currentAudioBook.audioPath"
+        name="audioPath"
+      />
+    </div>
+    <div class="form-group">
+      <label for="author">Reader</label>
+      <input
+        type="text"
+        class="form-control"
+        id="author"
+        [(ngModel)]="currentAudioBook.author"
+        name="Author"
+      />
+    </div>
+
+  </form>
+
+  <button class="badge badge-danger mr-2" (click)="deleteAudioBook()">
+    Delete
+  </button>
+
+  <button type="submit" class="badge badge-success" (click)="updateAudioBook()">
+    Update
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentAudioBook">
+  <br />
+  <p>Cannot access this audioBook...</p>
+</div>
